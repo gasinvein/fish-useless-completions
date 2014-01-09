@@ -28,8 +28,7 @@ end
 function __fish_port_list --description 'Suggest port names'
 	set input (commandline -to)
 	if test "$input" != ""
-		#command port search --line --regex --name "^$input*" | cut -f 1,2,4
-		command grep -e "^$input*" ~/.local/share/fish/completions/port_list.txt | cut -f 1,2,4
+		command port search --line --regex --name "^$input*" | cut -f 1,2,4
 	end
 end
 
